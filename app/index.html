@@ -10,7 +10,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
-    <link rel="stylesheet" href="bower_components/octicons/octicons/octicons.css">
+    <link rel="stylesheet" href="../bower_components/octicons/octicons/octicons.css">
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -23,21 +23,40 @@
     <!-- endbuild -->
   </head>
   <body>
-
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
+    <div class="header-wrapper">
+    <header>
+    <div class="header-left">
+      <a href="#" class="octicon octicon-mark-github"></a>
+      <input type="textbox" placeholder="Search GitHub"/>
       <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-        <li>Sass</li>
-        <li>Modernizr</li>
-        <li>Bourbon & Neat</li>
-        <li>UnderscoreJS</li>
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Gist</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Help</a></li>
     </div>
+    <div class="header-right">
+      <ul>
+        <li id="header-avatar"></li>
+        <li><a href="#" class="octicon octicon-plus"></a></li>
+        <li><a href="#" class="octicon octicon-inbox"></a></li>
+        <li><a href="#" class="octicon octicon-gear"></a></li>
+        <li><a href="#" class="octicon octicon-sign-out"></a></li>
+      </ul>
+    </div>
+    </header>
+    </div> <!-- header-wrapper -->
 
+    <div class="container">
+    <aside>
+      <div class="user-card">
+        
+      </div> <!-- user-card -->
+    </aside>
+    <main>
+
+    </main>
+
+    </div> <!-- container -->
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
