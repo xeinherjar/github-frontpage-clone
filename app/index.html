@@ -48,9 +48,18 @@
 
     <div class="container">
     <aside>
-      <div class="user-card">
+      <div id="user-card">
         
       </div> <!-- user-card -->
+      <div id="user-details">
+
+      </div> <!-- user-details -->
+      <div id="user-stats">
+
+      </div> <!-- user-stats -->
+      <div id="user-orgs">
+
+      </div> <!-- user-orgs -->
     </aside>
     <main>
 
@@ -64,11 +73,55 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+
+    <!-- lodash templates -->
+    <script type="text/lodash" id="header-avatar-template">
+      <a href="#"><img src="{{avatar_url}}&s=40" />{{login}}</a>
+    </script>
+
+    <script type="text/lodash" id="user-card-template">
+      <a href="/account"><img src="{{avatar_url}}&s=460" /></a>
+      <span>{{name}}</span>
+      <span>{{login}}</span>
+    </script>
+
+    <script type="text/lodash" id="user-details-template">
+      <ul>
+        <li class="octicon octicon-location">{{location}}</li>
+        <li><a href="mailto:{{email}}">{{email}}</a></li>
+        <li><a href="{{blog}}">{{blog}}</a><li>
+        <li>Joined on {{created_at}}</li>
+      </ul>
+    </script>
+
+    <script type="text/lodash" id="user-stats-template">
+      <a href="#">
+        <span>{{followers}}</span>
+        Followers
+      </a>
+      <a href="#">
+        <span>{{starred}}</span>
+        Starred
+      </a>
+      <a href="#">
+        <span>{{following}}</span>
+        Following
+      </a>
+    </script>
+
+    <script type="text/lodash" id="user-orgs-template">
+      <h4>Organizations</h4>
+      <% _.each(orgs, function(org) { %>
+        <a href="#"><img src="{{org.avatar_url}}" /></a>
+      <% }); %> 
+    </script>
+
         <!-- build:js scripts/main.js -->
         <script src="scripts/orgs.js"></script>
         <script src="scripts/starred.js"></script>
         <script src="scripts/repos.js"></script>
         <script src="scripts/user.js"></script>
+        <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
 </html>

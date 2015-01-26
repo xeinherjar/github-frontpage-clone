@@ -69,6 +69,10 @@ header {
     vertical-align: middle;
   }
 
+  #header-avatar img {
+    width: 20px;
+    border-radius: 3px;
+  };
 }
 
 .container {
@@ -80,6 +84,16 @@ aside {
   @include span-columns(4);
   background-color: green;
   height: 500px;
+
+  #user-card {
+    span {
+      display: block;
+    }
+    img {
+    width: 230px;
+    }
+  }
+
 }
 
 main {
