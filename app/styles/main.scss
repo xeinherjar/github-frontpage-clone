@@ -5,6 +5,10 @@
 
 $link-color: RGB(65, 131, 196);
 $header-bg: RGB(245, 245, 245);
+@mixin border-sep {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
 
 // Custom Styles
 body {
@@ -100,8 +104,8 @@ aside {
   }
 
   #user-card {
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 15px;
+
+    @include border-sep;
     span:nth-child(2) {
       font-size: 26px;
       font-weight: bold;
@@ -121,8 +125,7 @@ aside {
   }
 
   #user-details {
-    padding-bottom: 15px;
-    border-bottom: 1px solid lightgray;
+    @include border-sep;
     ul {
       padding: 2px 0;
       margin: 10px 0 0 0;;
@@ -148,8 +151,43 @@ aside {
   } // user-details
 
   #user-stats {
-    
-  } // user-details
+   margin-top: 10px; 
+   overflow: auto;
+   text-align: center;
+   font-size: 11px;
+   @include border-sep;
+
+   div {
+    float: left;
+    @include span-columns(4);
+   }
+   span {
+     display: block;
+     font-size: 28px;
+     font-weight: bold;
+     color: $link-color;
+   }
+
+   a {
+    color: #999;
+
+    &:hover {
+      color: $link-color;
+    }
+   }
+  } // user-stats
+
+  #user-orgs {
+    h4 {
+      margin: 18px 0;
+    }
+    img {
+      width: 42px;
+      vertical-align: middle;
+      border-radius: 3px;
+      display: inline-block;
+    }
+  }
 }
 
 main {
