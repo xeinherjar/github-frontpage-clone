@@ -193,7 +193,8 @@ aside {
 
 main {
   @include span-columns(9);
-  height: 500px;
+  @include omega();
+  margin-bottom: 40px;
 
   .tab-nav {
     overflow: auto;
@@ -395,7 +396,64 @@ main {
   }
 }
 
+footer {
+  overflow: auto;
+  display: block;
+  clear: both;
+  margin: 40px 0;
+  padding: 40px 0 0;
+  border-top: 1px solid lightgray;
 
+  ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        font-size: 12px;
+        display: inline-block;
+
+        a {
+          color: $link-color;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+ 
+  .footer-left {
+    @include span-columns(5);
+    float: left;
+    text-align: left;
+    li {
+      margin-right: 10px;
+    }
+ } // footer=left
+
+  .footer-center {
+    @include span-columns(2);
+    text-align: center;
+    a {
+      font-size: 24px;
+      color: RGB(204, 204, 204);
+
+      &:hover {
+        color: RGB(187, 187, 187);
+      }
+    }
+  }
+
+  .footer-right {
+    @include span-columns(5);
+    float: right;
+    text-align: right;
+
+    li {
+      margin-left: 10px;
+    }
+  }
+}
 
 
 
