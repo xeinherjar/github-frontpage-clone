@@ -142,6 +142,7 @@ aside {
     span {
       width: 16px;
       text-align: center;
+      margin-right: 5px;
       vertical-align: middle;
     }
     .octicon:before {
@@ -192,8 +193,58 @@ aside {
 
 main {
   @include span-columns(9);
-  background-color: blue;
   height: 500px;
+
+  .tab-nav {
+    overflow: auto;
+
+    .tab-nav-left {
+      float: left;
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+ 
+       a {
+          text-decoration: none;
+          color: black;
+        }     
+
+      ul li {
+        margin: 8px 12px;
+        font-size: 14px;
+        display: inline-block;
+        list-style: none;
+      }
+    } // tab-nav-left
+
+    .tab-nav-right {
+      float: right;
+ 
+        a {
+          text-decoration: none;
+          color: black;
+       }     
+        
+        div {
+          border-radius: 4px;
+          background-color: $header-bg;
+          border: 1px solid lightgray;
+          padding: 4px 10px;
+          font-size: 13px;
+          font-weight: bold;
+          &:hover {
+            background-color: RGB(236, 236, 236);
+          }
+ 
+         }
+      span {
+        vertical-align: middle;
+      }
+    }
+  } // tab-nav
+
 }
 
 
