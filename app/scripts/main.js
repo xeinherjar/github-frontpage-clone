@@ -18,16 +18,15 @@ var date_parts = function(str) {
   } 
 
   dp.display = "" + dp.month_short + " " + dp.day + ", " + dp.year; 
-  var ago = function(dt) {
-      var ago = "Updated ";
+  function ago(dt) {
       var ms_per_day = 1000 * 60 * 60 * 24;
       var diff = ((Date.now() - dt) / ms_per_day);
       diff = Math.floor(diff);
 
-      if (diff < 31) { return "Updated " + diff + " days ago"; }
-      else if (diff < 365) { return "Updated " + diff + " months ago"; }
-      else if (diff > 365) { 
-        return "Updated on " + dt.display;
+      if (diff < 31) { 
+        return "Updated " + diff + " days ago"; 
+      } else {
+        return "Updated on " + dp.display;
       }
   };
 
