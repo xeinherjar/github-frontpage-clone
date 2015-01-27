@@ -81,6 +81,15 @@ header {
     vertical-align: middle;
   }
 
+  .small-icon {
+    vertical-align: middle;
+    font-size: 12px;
+    &:before {
+      font-size: 18px;
+      vertical-align: middle;
+    }
+  }
+
   #header-avatar img {
     vertical-align: middle;
     width: 20px;
@@ -379,8 +388,23 @@ main {
       }
 
       .repo-fork, .repo-desc, .repo-pushed-at {
-        clear: both;
+       clear: both;
         margin-top: 8px;
+      }
+
+      .repo-fork {
+        vertical-align: middle;
+        color: #888;
+        font-size: 12px;
+        
+        span {
+          margin-right: 5px;
+        }
+
+        .octicon {
+          font-size: 12px;
+        }
+       
       }
 
       .repo-desc {

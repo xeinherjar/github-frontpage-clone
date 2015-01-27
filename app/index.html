@@ -37,7 +37,7 @@
     <div class="header-right">
       <ul>
         <li id="header-avatar"></li>
-        <li><a href="#" class="octicon octicon-plus"></a></li>
+        <li><a href="#" class="octicon octicon-plus small-icon"> </a></li>
         <li><a href="#" class="octicon octicon-inbox"></a></li>
         <li><a href="#" class="octicon octicon-gear"></a></li>
         <li><a href="#" class="octicon octicon-sign-out"></a></li>
@@ -224,7 +224,7 @@
         </div>
         <% if (repo.fork) { %>
           <div class="repo-fork">
-            <span class="octicon octicon-repo-forked"></span>{{repo.fork}}
+            <span class="octicon octicon-repo-forked"></span>forked from <a href="#">{{repo.fork}}</a>
           </div>
         <% }; %>
         <div class="repo-desc">{{repo.description}}</div>
