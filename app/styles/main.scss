@@ -339,8 +339,59 @@ main {
   } // search-nav
 
 
-  .user-repos {
+  #user-repos {
+    a { 
+        color: $link-color;
+        text-decoration: none;
 
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+    .repo-info {
+      overflow: auto;
+      padding: 30px 0;
+      border-bottom: 1px solid lightgray;
+      
+      .repo-heading {
+        overflow: auto;
+      }
+
+      .repo-name {
+        font-size: 20px;
+        font-weight: bold;
+        float: left;
+      }
+
+      .repo-stats {
+        float: right;
+        color: #888;
+        font-size: 12px;
+        font-weight: bold;
+
+        span {
+          font-weight: bold;
+          font-size: 12px;
+          padding-left: 8px;
+        }
+      }
+
+      .repo-fork, .repo-desc, .repo-pushed-at {
+        clear: both;
+        margin-top: 8px;
+      }
+
+      .repo-desc {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .repo-pushed-at {
+        color: #888;
+        font-size: 13px;
+      }
+    } // repo-info
   }
 }
 

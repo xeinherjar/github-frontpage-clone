@@ -1,6 +1,40 @@
 // orgs[], starred[], repos[], user{}
 
+// Helper Functions
 
+var date_parts = function(str) {
+  var update = new Date(str);
+  var d = Date.now();
+  var month_abv = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June',
+                   'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+  var dp = {
+    day:   update.getDay(),
+    month_short: month_abv[update.getMonth()],
+    month: update.getMonth() + 1,
+    year:  update.getUTCFullYear(),
+    ago_text: "",
+    display: ""
+  } 
+
+  dp.display = "" + dp.month_short + " " + dp.day + ", " + dp.year; 
+  var ago = function(dt) {
+      var ago = "Updated ";
+      var ms_per_day = 1000 * 60 * 60 * 24;
+      var diff = ((Date.now() - dt) / ms_per_day);
+      diff = Math.floor(diff);
+
+      if (diff < 31) { return "Updated " + diff + " days ago"; }
+      else if (diff < 365) { return "Updated " + diff + " months ago"; }
+      else if (diff > 365) { 
+        return "Updated on " + dt.display;
+      }
+  };
+
+
+  dp.ago_text = ago(update);
+  return dp;
+};
 
 // TEMPLATES
 
@@ -18,6 +52,7 @@ header_avatar.html(ha_template_function(user));
 var user_card = $('#user-card');
 var user_card_template = $('#user-card-template').html();
 var uc_template_function = _.template(user_card_template);
+user.created_display = date_parts(user.created_at).display;
 user_card.html(uc_template_function(user));
 
 
