@@ -43,3 +43,14 @@ var user_orgs = $('#user-orgs');
 var user_orgs_template = $('#user-orgs-template').html();
 var uo_template_function = _.template(user_orgs_template);
 user_orgs.html(uo_template_function(orgs));
+
+
+// user-repos
+var user_repos = $('#user-repos');
+var user_repos_template = $('#user-repos-template').html();
+var ur_template_function = _.template(user_repos_template);
+// Sort arry by pushed_at date.
+var sorted_repos = _.sortBy(repos, function(r) { return r.pushed_at; });
+// lodash sortBy aslways does asc, reverse to get desc
+sorted_repos = sorted_repos.reverse();
+user_repos.html(ur_template_function(sorted_repos));

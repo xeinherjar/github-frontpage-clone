@@ -70,7 +70,7 @@
               Contributions
               </span></a>
             </li>
-            <li><a href="#">
+            <li class="tab-select"><a href="#">
               <span class="octicon octicon-repo"></span>
               Repositories 
               </span></a>
@@ -89,7 +89,30 @@
           </div></a>
         </div>
       </div> <!-- tab-nav -->
+      <div class="search-nav">
+        <div class="search-nav-left">
+          <form action="/search">
+            <input type="textbox" placeholder="Find a repository..." />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div class="search-nav-right">
+          <ul>
+            <li><a href="#" class="search-filter">All</a></li>
+            <li><a href="#">Public</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">Forks</a></li>
+            <li><a href="#">Mirrors</a></li>
+          </ul>
+          <a href="#">
+            <div><span class="octicon octicon-repo"></span>New</div>
+          </a>
+        </div>
+      </div>
+      <div id="user-repos">
 
+      </div>
     </main>
 
     </div> <!-- container -->
@@ -159,6 +182,19 @@
       <% _.each(orgs, function(org) { %>
         <a href="#"><img src="{{org.avatar_url}}" /></a>
       <% }); %> 
+    </script>
+
+    <script type="text/lodash" id="user-repos-template">
+      <% _.each(sorted_repos, function(repo) { %>
+      <div class="repo-info">
+        <div class="repo-name"><a href="{{repo.html_url}}">{{repo.name}}</a></div>
+        <% if (repo.fork) { %>
+          <div class="repo-fork">{{repo.fork}}</div>
+        <% }; %>
+        <div class="repo-desc">{{repo.description}}</div>
+        <div class="repo-pushed-at">{{repo.pushed_at}}</div>
+      </div>
+      <% }); %>
     </script>
 
         <!-- build:js scripts/main.js -->

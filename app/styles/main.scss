@@ -197,6 +197,7 @@ main {
 
   .tab-nav {
     overflow: auto;
+    margin-bottom: -1px;
 
     .tab-nav-left {
       float: left;
@@ -208,15 +209,23 @@ main {
  
        a {
           text-decoration: none;
-          color: black;
+          color: RGB(102, 102, 102);
         }     
 
       ul li {
-        margin: 8px 12px;
+        padding: 8px 12px;
         font-size: 14px;
         display: inline-block;
         list-style: none;
       }
+    .tab-select {
+      border: 1px solid lightgray;
+      border-bottom: none;
+      background-color: white;
+      a { color: black; }
+    }
+
+
     } // tab-nav-left
 
     .tab-nav-right {
@@ -245,7 +254,97 @@ main {
     }
   } // tab-nav
 
+  .search-nav {
+    padding-top: 12px; 
+    overflow: auto;
+    border-top: 1px solid lightgray;
+    padding-bottom: 12px;
+    border-bottom: 1px solid lightgray;
+    .search-nav-left {
+      float: left;
+
+     input[type="textbox"] {
+      margin-left: 8px;
+      width: 260px;
+      height: 34px;
+      font-size: 13px;
+      padding: 4px 20px 4px 8px;
+      border-radius: 3px;
+      border: 1px solid lightgray;
+        &:focus {
+          border: 1px solid blue;
+        }
+      }
+
+      button {
+        padding: 7px 12px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #333;
+        background-color: #eee;
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+        height: 34px;
+        &:hover {
+          background-color: RGB(225, 225, 225);
+        }
+
+      }
+    } // search-nav-left
+
+    .search-nav-right {
+      float: right;
+       ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         display: inline-block;
+
+         li {
+          display: inline-block;
+          font-size: 14px;
+          margin: 0 3px;
+         }
+       }
+       a {
+          text-decoration: none;
+          color: $link-color;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      span {
+        padding-right: 5px;
+        vertical-align: middle;
+      }
+
+      div {
+        background-color: RGB(135, 217, 106);
+        border: 1px solid RGB(92, 169, 65);
+        border-radius: 3px;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 7px 12px;
+        color: white;
+        display: inline-block;
+        &:hover {
+          background-color: RGB(111, 199, 80);
+        }
+      }
+      .search-filter {
+        color: black;
+        font-weight: bold;
+      }
+    } // search-nav-right
+  } // search-nav
+
+
+  .user-repos {
+
+  }
 }
+
+
 
 
 
