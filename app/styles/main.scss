@@ -9,7 +9,7 @@ $header-bg: RGB(245, 245, 245);
 // Custom Styles
 body {
   background: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   color: #333;
 }
 
@@ -33,12 +33,15 @@ header {
 
     ul {
     list-style: none;
+    padding: 10px 0;
+    margin: 0;
     display: inline-block;
 
     > li {
       display: inline-block;
       font-size: 13px;
       font-weight: bold;
+      padding: 4px 8px;
       } // li
     } // ul
 
@@ -53,11 +56,16 @@ header {
   }
   
   > input[type="textbox"] {
-      width: 330px;
+      margin-left: 8px;
+      width: 360px;
+      height: 28px;
       font-size: 12px;
       padding: 4px 20px 4px 8px;
       border-radius: 3px;
       border: 1px solid lightgray;
+      &:focus {
+        border: 1px solid blue;
+      }
   }
 }
 
@@ -70,22 +78,30 @@ header {
   }
 
   #header-avatar img {
+    vertical-align: middle;
     width: 20px;
     border-radius: 3px;
+    margin-right: 5px;
   };
 }
 
 .container {
   @include outer-container();
   width: 980px;
+  margin-top: 20px;
 }
 
 aside {
-  @include span-columns(4);
-  background-color: green;
-  height: 500px;
+  @include span-columns(3);
+
+  a {
+    text-decoration: none;
+    color: $link-color;
+  }
 
   #user-card {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 15px;
     span:nth-child(2) {
       font-size: 26px;
       font-weight: bold;
@@ -93,31 +109,51 @@ aside {
     span:nth-child(3) {
       font-size: 20px;
       color: #666;
+      font-weight: 200;
     }
     span {
       display: block;
     }
     img {
     width: 230px;
+    border-radius: 6px;
     }
   }
 
   #user-details {
+    padding-bottom: 15px;
+    border-bottom: 1px solid lightgray;
     ul {
+      padding: 2px 0;
+      margin: 10px 0 0 0;;
       list-style: none;
       font-size: 14px;
-    }
 
+      li {
+        padding: 2px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+      }
+    }
+    span {
+      width: 16px;
+      text-align: center;
+      vertical-align: middle;
+    }
     .octicon:before {
       color: #ccc;
-
+      text-align: center;
     }
-  }
+  } // user-details
 
+  #user-stats {
+    
+  } // user-details
 }
 
 main {
-  @include span-columns(8);
+  @include span-columns(9);
   background-color: blue;
   height: 500px;
 }
