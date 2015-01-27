@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>010</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <div class="header-wrapper">
+    <header>
+    <div class="header-left">
+      <a href="#" class="octicon octicon-mark-github"></a>
+      <input type="textbox" placeholder="Search GitHub"/>
+      <ul>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Gist</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Help</a></li>
+    </div>
+    <div class="header-right">
+      <ul>
+        <li id="header-avatar"></li>
+        <li><a href="#" class="octicon octicon-plus"></a></li>
+        <li><a href="#" class="octicon octicon-inbox"></a></li>
+        <li><a href="#" class="octicon octicon-gear"></a></li>
+        <li><a href="#" class="octicon octicon-sign-out"></a></li>
+      </ul>
+    </div>
+    </header>
+    </div> <!-- header-wrapper -->
+
+    <div class="container">
+    <aside>
+      <div id="user-card">
+        
+      </div> <!-- user-card -->
+      <div id="user-details">
+
+      </div> <!-- user-details -->
+      <div id="user-stats">
+
+      </div> <!-- user-stats -->
+      <div id="user-orgs">
+
+      </div> <!-- user-orgs -->
+    </aside>
+    <main>
+      <div class="tab-nav">
+        <div class="tab-nav-left">
+          <ul>
+            <li><a href="#">
+              <span class="octicon octicon-diff-added"></span>
+              Contributions
+              </span></a>
+            </li>
+            <li class="tab-select"><a href="#">
+              <span class="octicon octicon-repo"></span>
+              Repositories 
+              </span></a>
+            </li>
+            <li><a href="#">
+              <span class="octicon octicon-rss"></span>
+              Public activity 
+              </span></a>
+            </li>
+          </ul>
+        </div> <!-- tab-nav-left -->
+        <div class="tab-nav-right">
+          <a href="#">
+            <div><span class="octicon octicon-pencil"></span>
+            Edit profile
+          </div></a>
+        </div>
+      </div> <!-- tab-nav -->
+      <div class="search-nav">
+        <div class="search-nav-left">
+          <form action="/search">
+            <input type="textbox" placeholder="Find a repository..." />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div class="search-nav-right">
+          <ul>
+            <li><a href="#" class="search-filter">All</a></li>
+            <li><a href="#">Public</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">Forks</a></li>
+            <li><a href="#">Mirrors</a></li>
+          </ul>
+          <a href="#">
+            <div><span class="octicon octicon-repo"></span>New</div>
+          </a>
+        </div>
+      </div>
+      <div id="user-repos">
+
+      </div>
+    </main>
+    <footer>
+      <div class="footer-left">
+        <ul>
+          <li><span>© 2015 GitHub, Inc.</span></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-center">
+        <a href="#" class="octicon octicon-mark-github"></a>
+      </div>
+
+      <div class="footer-right">
+        <ul>
+          <li><a href="#">Status</a></li>
+          <li><a href="#">API</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+
+      </div>
+    </footer>
+   </div> <!-- container -->
+
+
+    <script src="scripts/vendor.js"></script>
+
+
+    <!-- lodash templates -->
+    <script type="text/lodash" id="header-avatar-template">
+      <a href="#"><img src="{{avatar_url}}&s=40" />{{login}}</a>
+    </script>
+
+    <script type="text/lodash" id="user-card-template">
+      <a href="/account"><img src="{{avatar_url}}&s=460" /></a>
+      <span>{{name}}</span>
+      <span>{{login}}</span>
+    </script>
+
+    <script type="text/lodash" id="user-details-template">
+      <ul>
+        <li>
+          <span class="octicon octicon-location"></span>
+          {{location}}
+        </li>
+        <li>
+          <span class="octicon octicon-mail"></span>
+          <a href="mailto:{{email}}">{{email}}</a>
+        </li>
+        <li>
+          <span class="octicon octicon-link"></span>
+          <a href="{{blog}}">{{blog}}</a>
+        <li>
+        <li> 
+          <span class="octicon octicon-clock"></span>
+          Joined on {{created_display}}
+        </li>
+      </ul>
+    </script>
+
+    <script type="text/lodash" id="user-stats-template">
+      <div>
+      <a href="#">
+        <span>{{followers}}</span>
+        Followers
+      </a>
+      </div>
+      <div>
+      <a href="#">
+        <span>{{starred}}</span>
+        Starred
+      </a>
+      </div>
+      <div>
+      <a href="#">
+        <span>{{following}}</span>
+        Following
+      </a>
+      </div>
+    </script>
+
+    <script type="text/lodash" id="user-orgs-template">
+      <h4>Organizations</h4>
+      <% _.each(orgs, function(org) { %>
+        <a href="#"><img src="{{org.avatar_url}}" /></a>
+      <% }); %> 
+    </script>
+
+    <script type="text/lodash" id="user-repos-template">
+      <% _.each(sorted_repos, function(repo) { %>
+      <div class="repo-info">
+        <div class="repo-heading">
+        <div class="repo-name"><a href="{{repo.html_url}}">{{repo.name}}</a></div>
+        <div class="repo-stats">
+          <span>{{repo.language}}</span>
+          <span class="octicon octicon-star">{{repo.stargazers_count}}</span>
+          <span class="octicon octicon-git-branch">{{repo.forks}}</span>
+        </div>
+        </div>
+        <% if (repo.fork) { %>
+          <div class="repo-fork">
+            <span class="octicon octicon-repo-forked"></span>{{repo.fork}}
+          </div>
+        <% }; %>
+        <div class="repo-desc">{{repo.description}}</div>
+        <div class="repo-pushed-at">{{date_parts(repo.pushed_at).ago_text}}</div>
+      </div>
+      <% }); %>
+    </script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
