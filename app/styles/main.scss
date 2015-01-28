@@ -96,6 +96,24 @@ header {
     border-radius: 3px;
     margin-right: 5px;
   };
+
+  #header-avator ul {
+  }
+
+  .tooltip {
+    display: none;
+  }
+  .pop {
+   z-index: 5;
+   font-size: 12px;
+   border-radius: 3px;
+   background-color: RGB(51, 51, 51);
+   border: 1px solid white;
+   color: white;
+   position: absolute;
+   display: block;
+   padding: 5px 8px;
+  }
 }
 
 .container {

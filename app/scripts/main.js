@@ -88,3 +88,57 @@ var sorted_repos = _.sortBy(repos, function(r) { return r.pushed_at; });
 // lodash sortBy aslways does asc, reverse to get desc
 sorted_repos = sorted_repos.reverse();
 user_repos.html(ur_template_function(sorted_repos));
+
+
+
+
+
+// jQuery son
+var repo_plus = $('.repo-plus');
+repo_plus.mouseover(function(e) {
+  tooltip_hover(e, 'Create new...') 
+}).mouseout(function() {
+  var tooltip = $('.tooltip');
+  tooltip.removeClass('pop');
+});
+
+var inbox = $('.inbox');
+inbox.mouseover(function(e) {
+  tooltip_hover(e, 'You have no unread notifications') 
+}).mouseout(function() {
+  var tooltip = $('.tooltip');
+  tooltip.removeClass('pop');
+});
+
+var settings = $('.settings');
+settings.mouseover(function(e) {
+  tooltip_hover(e, 'Settings') 
+}).mouseout(function() {
+  var tooltip = $('.tooltip');
+  tooltip.removeClass('pop');
+});
+
+var sign_out = $('.so');
+sign_out.mouseover(function(e) {
+  tooltip_hover(e, 'Sign out') 
+}).mouseout(function() {
+  var tooltip = $('.tooltip');
+  tooltip.removeClass('pop');
+});
+
+
+
+
+var tooltip_hover = function(e, desc) {
+ var tooltip = $('.tooltip');
+  tooltip.text(desc);
+  tooltip.addClass('pop');
+  var x = e.pageX - 32;
+  var y = "48px";
+  tooltip.css({ 'left': x, 'top': y }); 
+
+
+};
+
+
+
